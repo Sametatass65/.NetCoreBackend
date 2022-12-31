@@ -39,24 +39,23 @@ namespace Business.Concrete
 
         public IResult Delete(Product product)
         {
-            
-            _productDal.Delete(product);
+             _productDal.Delete(product);
             return new SuccessResult(Messages.ProductDeleted);
         }
         [CacheAspect]
         public IDataResult<List<Product>> GetAll()
         {
-            return new DataSuccessResult<List<Product>>(_productDal.GetAll(),Messages.ProductGetAll);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(),Messages.ProductGetAll);
         }
 
         public IDataResult<List<Product>> GetByCategoryId(int categoryId)
         {
-            return new DataSuccessResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == categoryId).ToList(),Messages.ProductGetByCategoryId);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.CategoryId == categoryId).ToList(),Messages.ProductGetByCategoryId);
         }
 
         public IDataResult<Product> GetById(int id)
         {
-            return new DataSuccessResult<Product>(_productDal.Get(p => p.ProductId == id), Messages.ProductGetById);
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == id), Messages.ProductGetById);
         }
         [CacheRemoveAspect("IProductService.Get")]
         public IResult Update(Product product)

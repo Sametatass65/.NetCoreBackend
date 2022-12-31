@@ -1,6 +1,7 @@
 ﻿using Core.DataAccess.Abstract;
 using Core.Entities.Concrete;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Abstract
 {
-    public interface IUserDal : IEntityRepository<User>
+    public interface IFavoriteDal:IEntityRepository<Favorite>
     {
-        List<OperationClaim> GetClaims(User user);
+        List<FavoriteProductsDto> GetFavoriteProducts(int userId);
     }
 }

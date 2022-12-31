@@ -30,7 +30,12 @@ namespace Business.Constants
 
         public static string AuthorizationDenied = "Yetkiniz yok";
         public static string ProductNameAlreadyExists = "Ürün ismi zaten mevcut";
+        public static string FavorityAdded = "Favori tablosuna başarıyla ekleme yapıldı";
+        public static string FavorityDeleted = "Favori tablosunda silme işlemi başarıyla gerçekleşti";
+        public static string FavoriteUpdated = "Favori tablosu başarıyla güncellendi";
 
-       
+        public static string UsersFavorite = "Kullanıcının favorileri Çekilmiştir";
+
+        public static string FavoriteGetAll = "Favori Tablosu Başarıyla çekilmiştir";
     }
 }
